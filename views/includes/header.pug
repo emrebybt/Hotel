@@ -1,0 +1,26 @@
+
+.container-xxl.bg-white.p-0
+    #spinner.show.bg-white.position-fixed.translate-middle.w-100.vh-100.top-50.start-50.d-flex.align-items-center.justify-content-center
+        .spinner-border.text-primary(style='width: 3rem; height: 3rem;' role='status')
+            span.sr-only Loading...
+
+    .container-fluid.bg-dark.px-0
+        .row.gx-0
+            .col-lg-3.bg-dark.d-none.d-lg-block
+                a.navbar-brand.w-100.h-100.m-0.p-0.d-flex.align-items-center.justify-content-center(href='index.html')
+                    h1.m-0.text-primary.text-uppercase Hotelier
+            .col-lg-9
+                nav.navbar.navbar-expand-lg.bg-dark.navbar-dark.p-3.p-lg-0
+                    a.navbar-brand.d-block.d-lg-none(href='index.html')
+                        h1.m-0.text-primary.text-uppercase Hotelier
+                    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarCollapse')
+                        span.navbar-toggler-icon
+                    #navbarCollapse.collapse.navbar-collapse.justify-content-between
+                        .navbar-nav.mr-auto.py-0
+                            a.nav-item.nav-link.active(href='/') Home
+                            a.nav-item.nav-link(href='rooms') Rooms
+                            a.nav-item.nav-link(href='login') Login
+                            a.nav-item.nav-link(href='register') Register
+                            a.nav-item.nav-link(href='about') About
+                            a.nav-item.nav-link(href='contact') Contact
+

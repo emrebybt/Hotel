@@ -1,0 +1,45 @@
+extends layout 
+block content
+    .container-xxl.py-5
+        .container
+            .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+                h6.section-title.text-center.text-primary.text-uppercase Kayıt
+                h1.mb-5
+                    span.text-primary.text-uppercase Kayıt
+                    |  Ol Ve Fırsatları Kaçırma
+            .row.g-4
+                .col-md-3
+                .col-md-6
+                    .wow.fadeInUp(data-wow-delay='0.2s')
+                        form(action="auth/register" method="POST")
+                            .row.g-12
+                                .col-md-12
+                                    .form-floating
+                                        input#name.form-control(type='text' placeholder='Your Name' name="name")
+                                        label(for='name') İsim
+                                .col-md-12.mt-3
+                                    .form-floating
+                                        input#name.form-control(type='text' placeholder='Your Name' name="surname")
+                                        label(for='name') Soyisim
+                                .col-md-12.mt-3
+                                    .form-floating
+                                        input#name.form-control(type='text' placeholder='Your Name' name="username")
+                                        label(for='name') Kullanıcı Adı
+                                .col-md-12.mt-3
+                                    .form-floating
+                                        input#name.form-control(type='text' placeholder='Your Name' name="email")
+                                        label(for='name') E-posta
+                                .col-12.mt-3
+                                    .form-floating
+                                        input#subject.form-control(type='password' placeholder='Subject' name="password")
+                                        label(for='subject') Şifre
+                                .col-12.mt-3
+                                    .form-floating
+                                        input#subject.form-control(type='password' placeholder='Subject')
+                                        label(for='subject') Şifre Tekrar
+                                .col-12
+                                    button.btn.btn-primary.w-100.py-3.mt-3(type='submit') Kayıt Ol
+                                .col-12
+                                    a.btn.btn-primary.w-100.py-3.mt-3(href="login") Zaten Hesabın Varmı? Giriş Yap
+                .col-md-3
+

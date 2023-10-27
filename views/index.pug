@@ -1,0 +1,347 @@
+extends layout
+
+block content
+
+  .container.p-0.mb-5
+    #header-carousel.carousel.slide(data-bs-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.w-100(src='img/carousel-1.jpg' alt='Image')
+          .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-3(style='max-width: 700px;')
+              h6.section-title.text-white.text-uppercase.mb-3.animated.slideInDown Luxury Living
+              h1.display-3.text-white.mb-4.animated.slideInDown Discover A Brand Luxurious Hotel
+              a.btn.btn-primary.py-md-3.px-md-5.me-3.animated.slideInLeft(href='') Our Rooms
+              a.btn.btn-light.py-md-3.px-md-5.animated.slideInRight(href='') Book A Room
+        .carousel-item
+          img.w-100(src='img/carousel-2.jpg' alt='Image')
+          .carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+            .p-3(style='max-width: 700px;')
+              h6.section-title.text-white.text-uppercase.mb-3.animated.slideInDown Luxury Living
+              h1.display-3.text-white.mb-4.animated.slideInDown Discover A Brand Luxurious Hotel
+              a.btn.btn-primary.py-md-3.px-md-5.me-3.animated.slideInLeft(href='') Our Rooms
+              a.btn.btn-light.py-md-3.px-md-5.animated.slideInRight(href='') Book A Room
+      button.carousel-control-prev(type='button' data-bs-target='#header-carousel' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#header-carousel' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+
+  include includes/booking
+
+  .container-xxl.py-5
+    .container
+      .row.g-5.align-items-center
+        .col-lg-6
+          h6.section-title.text-start.text-primary.text-uppercase About Us
+          h1.mb-4
+            | Welcome to 
+            span.text-primary.text-uppercase Hotelier
+          p.mb-4
+            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+          .row.g-3.pb-4
+            .col-sm-4.wow.fadeIn(data-wow-delay='0.1s')
+              .border.rounded.p-1
+                .border.rounded.text-center.p-4
+                  i.fa.fa-hotel.fa-2x.text-primary.mb-2
+                  h2.mb-1(data-toggle='counter-up') 1234
+                  p.mb-0 Rooms
+            .col-sm-4.wow.fadeIn(data-wow-delay='0.3s')
+              .border.rounded.p-1
+                .border.rounded.text-center.p-4
+                  i.fa.fa-users-cog.fa-2x.text-primary.mb-2
+                  h2.mb-1(data-toggle='counter-up') 1234
+                  p.mb-0 Staffs
+            .col-sm-4.wow.fadeIn(data-wow-delay='0.5s')
+              .border.rounded.p-1
+                .border.rounded.text-center.p-4
+                  i.fa.fa-users.fa-2x.text-primary.mb-2
+                  h2.mb-1(data-toggle='counter-up') 1234
+                  p.mb-0 Clients
+          a.btn.btn-primary.py-3.px-5.mt-2(href='') Explore More
+        .col-lg-6
+          .row.g-3
+            .col-6.text-end
+              img.img-fluid.rounded.w-75.wow.zoomIn(data-wow-delay='0.1s' src='img/about-1.jpg' style='margin-top: 25%;')
+            .col-6.text-start
+              img.img-fluid.rounded.w-100.wow.zoomIn(data-wow-delay='0.3s' src='img/about-2.jpg')
+            .col-6.text-end
+              img.img-fluid.rounded.w-50.wow.zoomIn(data-wow-delay='0.5s' src='img/about-3.jpg')
+            .col-6.text-start
+              img.img-fluid.rounded.w-75.wow.zoomIn(data-wow-delay='0.7s' src='img/about-4.jpg')
+
+  .container-xxl.py-5
+    .container
+      .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+        h6.section-title.text-center.text-primary.text-uppercase Our Rooms
+        h1.mb-5
+          | Explore Our 
+          span.text-primary.text-uppercase Rooms
+      .row.g-4
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.1s')
+          .room-item.shadow.rounded.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/room-1.jpg' alt='')
+              small.position-absolute.start-0.top-100.translate-middle-y.bg-primary.text-white.rounded.py-1.px-3.ms-4 $100/Night
+            .p-4.mt-2
+              .d-flex.justify-content-between.mb-3
+                h5.mb-0 Junior Suite
+                .ps-2
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+              .d-flex.mb-3
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bed.text-primary.me-2
+                  | 3 Bed
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bath.text-primary.me-2
+                  | 2 Bath
+                small
+                  i.fa.fa-wifi.text-primary.me-2
+                  | Wifi
+              p.text-body.mb-3
+                | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+              .d-flex.justify-content-between
+                a.btn.btn-sm.btn-primary.rounded.py-2.px-4(href='') View Detail
+                a.btn.btn-sm.btn-dark.rounded.py-2.px-4(href='') Book Now
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.3s')
+          .room-item.shadow.rounded.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/room-2.jpg' alt='')
+              small.position-absolute.start-0.top-100.translate-middle-y.bg-primary.text-white.rounded.py-1.px-3.ms-4 $100/Night
+            .p-4.mt-2
+              .d-flex.justify-content-between.mb-3
+                h5.mb-0 Executive Suite
+                .ps-2
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+              .d-flex.mb-3
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bed.text-primary.me-2
+                  | 3 Bed
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bath.text-primary.me-2
+                  | 2 Bath
+                small
+                  i.fa.fa-wifi.text-primary.me-2
+                  | Wifi
+              p.text-body.mb-3
+                | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+              .d-flex.justify-content-between
+                a.btn.btn-sm.btn-primary.rounded.py-2.px-4(href='') View Detail
+                a.btn.btn-sm.btn-dark.rounded.py-2.px-4(href='') Book Now
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.6s')
+          .room-item.shadow.rounded.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/room-3.jpg' alt='')
+              small.position-absolute.start-0.top-100.translate-middle-y.bg-primary.text-white.rounded.py-1.px-3.ms-4 $100/Night
+            .p-4.mt-2
+              .d-flex.justify-content-between.mb-3
+                h5.mb-0 Super Deluxe
+                .ps-2
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+                  small.fa.fa-star.text-primary
+              .d-flex.mb-3
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bed.text-primary.me-2
+                  | 3 Bed
+                small.border-end.me-3.pe-3
+                  i.fa.fa-bath.text-primary.me-2
+                  | 2 Bath
+                small
+                  i.fa.fa-wifi.text-primary.me-2
+                  | Wifi
+              p.text-body.mb-3
+                | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+              .d-flex.justify-content-between
+                a.btn.btn-sm.btn-primary.rounded.py-2.px-4(href='') View Detail
+                a.btn.btn-sm.btn-dark.rounded.py-2.px-4(href='') Book Now
+
+  .container-xxl.py-5.px-0.wow.zoomIn(data-wow-delay='0.1s')
+    .row.g-0
+      .col-md-6.bg-dark.d-flex.align-items-center
+        .p-5
+          h6.section-title.text-start.text-white.text-uppercase.mb-3 Luxury Living
+          h1.text-white.mb-4 Discover A Brand Luxurious Hotel
+          p.text-white.mb-4
+            | Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+          a.btn.btn-primary.py-md-3.px-md-5.me-3(href='') Our Rooms
+          a.btn.btn-light.py-md-3.px-md-5(href='') Book A Room
+      .col-md-6
+        .video
+          button.btn-play(type='button' data-bs-toggle='modal' data-src='https://www.youtube.com/embed/DWRcNpR6Kdc' data-bs-target='#videoModal')
+            span
+  #videoModal.modal.fade(tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true')
+    .modal-dialog
+      .modal-content.rounded-0
+        .modal-header
+          h5#exampleModalLabel.modal-title Youtube Video
+          button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+        .modal-body
+
+          .ratio.ratio-16x9
+            iframe#video.embed-responsive-item(src='' allowfullscreen='' allowscriptaccess='always' allow='autoplay')
+
+  .container-xxl.py-5
+    .container
+      .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+        h6.section-title.text-center.text-primary.text-uppercase Our Services
+        h1.mb-5
+          | Explore Our 
+          span.text-primary.text-uppercase Services
+      .row.g-4
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.1s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-hotel.fa-2x.text-primary
+            h5.mb-3 Rooms & Appartment
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.2s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-utensils.fa-2x.text-primary
+            h5.mb-3 Food & Restaurant
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.3s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-spa.fa-2x.text-primary
+            h5.mb-3 Spa & Fitness
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.4s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-swimmer.fa-2x.text-primary
+            h5.mb-3 Sports & Gaming
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.5s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-glass-cheers.fa-2x.text-primary
+            h5.mb-3 Event & Party
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+        .col-lg-4.col-md-6.wow.fadeInUp(data-wow-delay='0.6s')
+          a.service-item.rounded(href='')
+            .service-icon.bg-transparent.border.rounded.p-1
+              .w-100.h-100.border.rounded.d-flex.align-items-center.justify-content-center
+                i.fa.fa-dumbbell.fa-2x.text-primary
+            h5.mb-3 GYM & Yoga
+            p.text-body.mb-0
+              | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+
+  .container-xxl.testimonial.my-5.py-5.bg-dark.wow.zoomIn(data-wow-delay='0.1s')
+    .container
+      .owl-carousel.testimonial-carousel.py-5
+        .testimonial-item.position-relative.bg-white.rounded.overflow-hidden
+          p
+            | Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos
+          .d-flex.align-items-center
+            img.img-fluid.flex-shrink-0.rounded(src='img/testimonial-1.jpg' style='width: 45px; height: 45px;')
+            .ps-3
+              h6.fw-bold.mb-1 Client Name
+              small Profession
+          i.fa.fa-quote-right.fa-3x.text-primary.position-absolute.end-0.bottom-0.me-4.mb-n1
+        .testimonial-item.position-relative.bg-white.rounded.overflow-hidden
+          p
+            | Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos
+          .d-flex.align-items-center
+            img.img-fluid.flex-shrink-0.rounded(src='img/testimonial-2.jpg' style='width: 45px; height: 45px;')
+            .ps-3
+              h6.fw-bold.mb-1 Client Name
+              small Profession
+          i.fa.fa-quote-right.fa-3x.text-primary.position-absolute.end-0.bottom-0.me-4.mb-n1
+        .testimonial-item.position-relative.bg-white.rounded.overflow-hidden
+          p
+            | Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd et erat magna eos
+          .d-flex.align-items-center
+            img.img-fluid.flex-shrink-0.rounded(src='img/testimonial-3.jpg' style='width: 45px; height: 45px;')
+            .ps-3
+              h6.fw-bold.mb-1 Client Name
+              small Profession
+          i.fa.fa-quote-right.fa-3x.text-primary.position-absolute.end-0.bottom-0.me-4.mb-n1
+
+  .container-xxl.py-5
+    .container
+      .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+        h6.section-title.text-center.text-primary.text-uppercase Our Team
+        h1.mb-5
+          | Explore Our 
+          span.text-primary.text-uppercase Staffs
+      .row.g-4
+        .col-lg-3.col-md-6.wow.fadeInUp(data-wow-delay='0.1s')
+          .rounded.shadow.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/team-1.jpg' alt='')
+              .position-absolute.start-50.top-100.translate-middle.d-flex.align-items-center
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-facebook-f
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-twitter
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-instagram
+            .text-center.p-4.mt-3
+              h5.fw-bold.mb-0 Full Name
+              small Designation
+        .col-lg-3.col-md-6.wow.fadeInUp(data-wow-delay='0.3s')
+          .rounded.shadow.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/team-2.jpg' alt='')
+              .position-absolute.start-50.top-100.translate-middle.d-flex.align-items-center
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-facebook-f
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-twitter
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-instagram
+            .text-center.p-4.mt-3
+              h5.fw-bold.mb-0 Full Name
+              small Designation
+        .col-lg-3.col-md-6.wow.fadeInUp(data-wow-delay='0.5s')
+          .rounded.shadow.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/team-3.jpg' alt='')
+              .position-absolute.start-50.top-100.translate-middle.d-flex.align-items-center
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-facebook-f
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-twitter
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-instagram
+            .text-center.p-4.mt-3
+              h5.fw-bold.mb-0 Full Name
+              small Designation
+        .col-lg-3.col-md-6.wow.fadeInUp(data-wow-delay='0.7s')
+          .rounded.shadow.overflow-hidden
+            .position-relative
+              img.img-fluid(src='img/team-4.jpg' alt='')
+              .position-absolute.start-50.top-100.translate-middle.d-flex.align-items-center
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-facebook-f
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-twitter
+                a.btn.btn-square.btn-primary.mx-1(href='')
+                  i.fab.fa-instagram
+            .text-center.p-4.mt-3
+              h5.fw-bold.mb-0 Full Name
+              small Designation
+

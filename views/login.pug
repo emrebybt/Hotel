@@ -1,0 +1,31 @@
+extends layout 
+block content
+
+
+    .container-xxl.py-5
+        .container
+            .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+                h6.section-title.text-center.text-primary.text-uppercase GİRİŞ
+                h1.mb-5
+                    span.text-primary.text-uppercase Giriş
+                    |  Yap Ve Fırsatları Kaçırma
+            .row.g-4
+                .col-md-3
+                .col-md-6
+                    .wow.fadeInUp(data-wow-delay='0.2s')
+                        form(action="login" method="POST")
+                            .row.g-12
+                                .col-md-12
+                                    .form-floating
+                                        input#name.form-control(type='text' placeholder='Your Name' name="username")
+                                        label(for='username') Kullanıcı Adı Veya E-posta
+                                .col-12.mt-3
+                                    .form-floating
+                                        input#subject.form-control(type='password' placeholder='Subject' name="password")
+                                        label(for='subject') Şifre
+                                .col-6
+                                    button.btn.btn-primary.w-100.py-3.mt-3(type='submit') Giriş Yap
+                                .col-6
+                                    a.btn.btn-primary.w-100.py-3.mt-3(href="register") Kayıt Ol
+                .col-md-3
+
