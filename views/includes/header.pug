@@ -19,8 +19,16 @@
                         .navbar-nav.mr-auto.py-0
                             a.nav-item.nav-link.active(href='/') Home
                             a.nav-item.nav-link(href='rooms') Rooms
-                            a.nav-item.nav-link(href='login') Login
-                            a.nav-item.nav-link(href='register') Register
+                            if !user
+                                a.nav-item.nav-link(href='login') Login
+                                a.nav-item.nav-link(href='register') Register
                             a.nav-item.nav-link(href='about') About
                             a.nav-item.nav-link(href='contact') Contact
-
+                    if user
+                        .text-center
+                            a(href="/userDashboard") 
+                                p.text-white.me-5.mt-3.mb-0 Hesabım
+                                p.text-white.me-5 #{user.username}
+                        .text-center
+                            a(href="") 
+                                p.text-white.me-5.mt-3 Çıkış Yap

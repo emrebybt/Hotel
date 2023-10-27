@@ -1,5 +1,5 @@
 const express = require('express');
-const expresssession = require('express-session');
+const session = require('express-session');
 
 const User = require('../models/user');
 
@@ -39,23 +39,23 @@ exports.getLogin = (req, res, next) => {
     })
 }
 
-exports.postLogin= async (req, res, next) => {
-    try {
-        const user = await User.findOne({ username: req.body.username, password: req.body.password })
-        if (!user) {
-          res.status(401).json({
-            message: "Login not successful",
-            error: "User not found",
-          })
-        } else {
-          res.status(200);
-          req.session.loggedIn= true;
-          res.redirect('/');
-        }
-      } catch (error) {
-        res.status(400).json({
-          message: "An error occurred",
-          error: error.message,
-        })
-      }
-    }
+exports.postLogin= (req, res, next) => {
+const user = User.findOne({ username: req.body.username, password: req.body.password })
+  .then((user) => {
+  if (!user) {
+    res.status(401).json({
+      message: "Login not successful",
+      error: "User not found",
+    })
+  } else {
+    res.status(200);
+    req.session.user = user;
+    req.session.loggedIn= true;
+    res.redirect('/');
+  }
+})
+.catch ((err) => {
+  console.log(err);
+})}
+
+
