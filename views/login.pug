@@ -1,6 +1,6 @@
 extends layout 
 block content
-
+    
 
     .container-xxl.py-5
         .container
@@ -13,6 +13,8 @@ block content
                 .col-md-3
                 .col-md-6
                     .wow.fadeInUp(data-wow-delay='0.2s')
+                        if error
+                            p.alert.alert-danger.text-center #{error}
                         form(action="login" method="POST")
                             .row.g-12
                                 .col-md-12

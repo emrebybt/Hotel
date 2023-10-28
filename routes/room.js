@@ -7,9 +7,9 @@ router.get('/rooms', roomController.GetRooms)
   
 router.post('/rooms', roomController.postRooms)
 
+router.get('/book/:id', roomController.getBookRoom)
 
-
-
+router.post('/book', roomController.postBookRoom)
 
 
 module.exports = router;

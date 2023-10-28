@@ -17,18 +17,20 @@
                         span.navbar-toggler-icon
                     #navbarCollapse.collapse.navbar-collapse.justify-content-between
                         .navbar-nav.mr-auto.py-0
-                            a.nav-item.nav-link.active(href='/') Home
-                            a.nav-item.nav-link(href='rooms') Rooms
-                            a.nav-item.nav-link(href='about') About
-                            a.nav-item.nav-link(href='contact') Contact
-                            if !user
-                                a.nav-item.nav-link(href='login') Login
-                                a.nav-item.nav-link(href='register') Register
+                            a.nav-item.nav-link.active(href='/') Anasayfa
+                            a.nav-item.nav-link(href='/rooms') Odalar
+                            a.nav-item.nav-link(href='/about') Hakkımızda
+                            a.nav-item.nav-link(href='/contact') İletişim
+                    if !user
+                        a.nav-item.nav-link(href='/login') Giriş
+                        a.nav-item.nav-link(href='/register') Kayıt
+                                
                     if user
                         .text-center
-                            a(href="/userDashboard") 
+                            a(href="/profile") 
                                 p.text-white.me-5.mt-3.mb-0 Hesabım
                                 p.text-white.me-5 #{user.username}
+                                
                         .text-center
-                            a(href="logout") 
+                            a(href="/logout") 
                                 p.text-white.me-5.mt-3 Çıkış Yap

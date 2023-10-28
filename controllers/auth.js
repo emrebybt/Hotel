@@ -1,7 +1,9 @@
 const express = require('express');
 const session = require('express-session');
-
+const bcrypt = require('bcrypt');
 const User = require('../models/user');
+const Rent = require('../models/rent');
+
 
 
 exports.Register = (req, res, next) => {
@@ -10,18 +12,18 @@ exports.Register = (req, res, next) => {
 
 
 exports.postAddUser = (req, res, next) => {
-    const name = req.body.name;
-    const surname = req.body.surname;
-    const username = req.body.username;
-    const email = req.body.email;
-    const password = req.body.password;
-
+    bcrypt.hash(req.body.password, 10, (err, hash) => {
+      if (err) {
+        console.log("Şifre hashleme hatası");
+        return next(err);
+      }
+    
     const user = new User({
-        name: name,
-        surname: surname,
-        username: username,
-        email: email,
-        password: password
+        name: req.body.name,
+        surname: req.body.surname,
+        username: req.body.username,
+        email: req.body.email,
+        password: hash
     })
 
     user.save()
@@ -31,6 +33,7 @@ exports.postAddUser = (req, res, next) => {
     }).catch((err) => {
         console.log(err)
     })
+  })
 }
 
 exports.getLogin = (req, res, next) => {
@@ -40,18 +43,22 @@ exports.getLogin = (req, res, next) => {
 }
 
 exports.postLogin= (req, res, next) => {
-const user = User.findOne({ username: req.body.username, password: req.body.password })
+const user = User.findOne({ username: req.body.username})
   .then((user) => {
   if (!user) {
-    res.status(401).json({
-      message: "Login not successful",
-      error: "User not found",
-    })
+    res.render('login', {error: 'Kullanıcı adı veya şifre yanlış'})
   } else {
-    res.status(200);
-    req.session.user = user;
-    req.session.loggedIn= true;
-    res.redirect('/');
+    bcrypt.compare(req.body.password, user.password)
+    .then((result => {
+      if (result){
+        req.session.user = user;
+        req.session.loggedIn= true;
+        res.redirect('/');
+      }
+      else {
+        res.render('login', {error: 'Kullanıcı adı veya şifre yanlış'})
+      }
+    }))
   }
 })
 .catch ((err) => {
@@ -60,5 +67,18 @@ const user = User.findOne({ username: req.body.username, password: req.body.pass
 
 exports.getLogout = (req, res, next) => {
   req.session.destroy();
-  res.redirect('/')
+  res.redirect('/');
+}
+
+exports.getProfile = (req, res, next) => {
+  Rent.find({userId : req.session.user._id})
+  .populate('roomId')
+  .then((rents) => {
+    console.log(rents);
+    res.render('profile', {
+      title: 'Profil Sayfası',
+      rents: rents
+    })
+  })
+  
 }

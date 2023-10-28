@@ -1,0 +1,64 @@
+extends layout 
+block content
+
+
+    .container-xxl.py-5
+        .container
+            .text-center.wow.fadeInUp(data-wow-delay='0.1s')
+                h6.section-title.text-center.text-primary.text-uppercase Rezarvasyon
+                h1.mb-5
+                    span.text-primary.text-uppercase Tatiliniz
+                    |  İçin Rezervasyon Yapın
+            .row.g-4
+                .col-md-6.wow.fadeIn(data-wow-delay='0.1s')
+                    .col-lg-8.col-md-6.wow.fadeInUp(data-wow-delay='0.1s')
+                        .room-item.shadow.rounded.overflow-hidden
+                            .position-relative
+                                img.img-fluid(src='/img/room-1.jpg' alt='')
+                                small.position-absolute.start-0.top-100.translate-middle-y.bg-primary.text-white.rounded.py-1.px-3.ms-4 $100/Night
+                            .p-4.mt-2
+                                .d-flex.justify-content-between.mb-3
+                                    h5.mb-0 #{room.category}
+                                .ps-2
+                                    small.fa.fa-star.text-primary
+                                    small.fa.fa-star.text-primary
+                                    small.fa.fa-star.text-primary
+                                    small.fa.fa-star.text-primary
+                                    small.fa.fa-star.text-primary
+                                .d-flex.mb-3
+                                    small.border-end.me-3.pe-3
+                                        i.fa.fa-bed.text-primary.me-2
+                                        | #{room.bed} Bedds
+                                    small.border-end.me-3.pe-3
+                                        i.fa.fa-bath.text-primary.me-2
+                                        | 2 Bath
+                                    small
+                                        i.fa.fa-wifi.text-primary.me-2
+                                        | Wifi
+                                p.text-body.mb-3
+                                | Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.
+                                .d-flex.justify-content-between
+                                    a.btn.btn-sm.btn-primary.rounded.py-2.px-4(href='book/' ) View Detail
+                                    a.btn.btn-sm.btn-dark.rounded.py-2.px-4(href='book/' ) Book Now
+
+                .col-md-6
+                    .wow.fadeInUp(data-wow-delay='0.2s')
+                        if error
+                            p.alert.alert-danger.text-center #{error}
+                        form(action="/book" method="post" id="myform")
+                            .row.g-3
+                                .col-md-6
+                                    input(type="hidden" value= room._id name="id")
+                                    #date1.date(data-target-input='nearest')
+                                        input.form-control.datetimepicker-input(type='text' placeholder='Başlangıç Tarihi' data-target='#date1' data-toggle='datetimepicker' name="startDate")
+                                .col-md-6
+                                    #date2.date(data-target-input='nearest')
+                                        input.form-control.datetimepicker-input(type='text' placeholder='Bitiş Tarihi' data-target='#date2' data-toggle='datetimepicker' name="endDate")
+                                .col-md-12
+                                    select.form-select(name="adult")
+                                        option(selected='') Yetişkin
+                                        option(value='1') 1
+                                        option(value='2') 2
+                                        option(value='3') 3
+                                .col-12
+                                    button.btn.btn-primary.w-100.py-3(type='submit') Rezervasyon Talebi

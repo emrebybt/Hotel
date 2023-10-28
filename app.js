@@ -8,6 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
 const roomRouter = require('./routes/room');
+const rentRouter = require('./routes/rent');
 const mongoose = require('mongoose')
 
 const app = express();
@@ -31,7 +32,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(({
   secret: 'sdaasdasgfdgdf55!',
   resave: false,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    expires: new Date(253402300799999)
+  }
 })));
 
 app.use((req, res, next) => {
@@ -42,6 +46,7 @@ app.use((req, res, next) => {
 app.use('/', roomRouter)
 app.use('/', authRouter)
 app.use('/', indexRouter);
+app.use('/', rentRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

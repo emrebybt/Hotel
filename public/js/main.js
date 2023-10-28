@@ -107,3 +107,21 @@
     
 })(jQuery);
 
+document.querySelector('#myform').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const startDateInput = document.querySelector('input[name="startDate"]');
+    const endDateInput = document.querySelector('input[name="endDate"]');
+    const today = new Date(); // Bugünkü tarih
+
+    const startDate = new Date(startDateInput.value);
+    const endDate = new Date(endDateInput.value);
+
+    if (startDate < today) {
+      alert('Başlangıç tarihi bugünden önceki bir tarih olamaz.');
+    } else if (startDate >= endDate) {
+      alert('Başlangıç tarihi bitiş tarihinden sonra olamaz.');
+    } else {
+      this.submit(); // Formu gönder
+    }
+  });

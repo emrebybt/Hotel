@@ -4,11 +4,16 @@ const Schema = mongoose.Schema
 
 const RentSchema = new Schema({
     roomId: String,
-    userId: Number,
+    userId: String,
     startDate: Date,
     endDate: Date,
     price: Number,
-    totalPrice: Number
+    adult: Number,
+    totalPrice: Number,
+    roomId: {
+        type: Schema.Types.ObjectId,
+        ref: 'room'
+    }
 })
 
 module.exports = mongoose.model('rent', RentSchema)
