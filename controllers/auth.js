@@ -58,4 +58,7 @@ const user = User.findOne({ username: req.body.username, password: req.body.pass
   console.log(err);
 })}
 
-
+exports.getLogout = (req, res, next) => {
+  req.session.destroy();
+  res.redirect('/')
+}
