@@ -8,7 +8,7 @@ NodeJs-Express teknolojisi ile yazılmış otel projesi. Bu projede veri tabanı
 hash'lenmiş olarak tutulur.
 
 Kullanıcı giriş yaptıktan sonra bilgileri sunucu hafızasında tutulur ve geçmiş kiralamalarını görebilir, yenileyebilir, gelecek olanları iptal edebilir.
-Oda kiralandıktan sonra başka bir kullanıcı aynı tarihte odayı kiralamayı çalışırsa oda dolu hatı alacaktır. Aynı şekilde geçmiş bir tarihe kiralama yapmaya çalışırsa hata alacaktır.
+Oda kiralandıktan sonra başka bir kullanıcı aynı tarihte odayı kiralamayı çalışırsa oda dolu hatası alacaktır. Aynı şekilde geçmiş bir tarihe kiralama yapmaya çalışırsa hata alacaktır.
 
 EN ->
 
